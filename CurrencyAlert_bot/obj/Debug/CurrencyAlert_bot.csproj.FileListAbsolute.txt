@@ -1,0 +1,17 @@
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\bin\Debug\CurrencyAlert_bot.exe.config
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\bin\Debug\CurrencyAlert_bot.exe
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\bin\Debug\CurrencyAlert_bot.pdb
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\bin\Debug\Newtonsoft.Json.dll
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\bin\Debug\Telegram.Bot.dll
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\bin\Debug\Newtonsoft.Json.xml
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\bin\Debug\Telegram.Bot.xml
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\obj\Debug\CurrencyAlert_bot.csprojAssemblyReference.cache
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\obj\Debug\CurrencyAlert_bot.csproj.CoreCompileInputs.cache
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\obj\Debug\CurrencyAlert_bot.csproj.CopyComplete
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\obj\Debug\CurrencyAlert_bot.exe
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\obj\Debug\CurrencyAlert_bot.pdb
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\bin\Debug\AngleSharp.dll
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\bin\Debug\AngleSharp.xml
+C:\Users\blood\source\repos\CurrencyAlert_bot\CurrencyAlert_bot\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
