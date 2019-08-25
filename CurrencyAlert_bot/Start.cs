@@ -6,38 +6,49 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Args;
 using CurrencyAlert_bot.Entities;
-using AngleSharp;
-using AngleSharp.Html.Parser;
 using System.Net;
 using System.IO;
+using System.Threading;
 
 namespace CurrencyAlert_bot
 {
     public class Start
     {
+        static string message;
         private static readonly TelegramBotClient Bot = new TelegramBotClient("987528104:AAGz3x4AggzIoG6pj7aYkXNcf23q2J56sm8");
-        public static async Task Main(string[] args)
+        public static void Main(string[] args)
         {
-            WebClient client = new WebClient();
-            client.Headers.Add("user-agent", "Mozilla/5.0 (Windows; Windows NT 5.1; rv:1.9.2.4) Gecko/20100611 Firefox/3.6.4");
-            string fullPage = client.DownloadString("https://minfin.com.ua/ua/currency/mb/");
-            string[] some = fullPage.Split(new string[] { "<td data-title='Доллар' class='active'>" }, StringSplitOptions.None);
-            foreach(var b in some)
-            {
-                Console.WriteLine(b);
-            }
-
-
+            Parser parser = new Parser();
             Bot.OnMessage += Bot_OnMessage;
+            ShowMessage method = Show;
             Bot.StartReceiving();
-            Bot.SendTextMessageAsync("@CurrencyAlert_Bot", "show");
+            parser.StartParser(method);
             Console.ReadKey();
             Bot.StopReceiving();
         }
 
+        static void Show(string Message)
+        {
+            message = Message;
+        }
+
         private static void Bot_OnMessage(object sender, MessageEventArgs e)
         {
-            Bot.SendTextMessageAsync(e.Message.Chat.Id, "shut ur fuck up, scam");
+            if (e.Message.Text == "/help")
+            {
+                Bot.SendTextMessageAsync(e.Message.Chat.Id, "Вот перечень команд:\r\nCheck - проверка текущего курса");
+            }
+            else if(e.Message.Text == "Check")
+            {
+                Bot.SendTextMessageAsync(e.Message.Chat.Id, "");
+            }
+            else
+            {
+                if (message != null)
+                {
+                    Bot.SendTextMessageAsync(e.Message.Chat.Id, message);
+                }
+            }
         }
     }
 }
