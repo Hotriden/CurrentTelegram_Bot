@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace CurrencyTelegram_bot.Models
+﻿namespace CurrencyTelegram_bot.Models
 {
+    /// <summary>
+    /// Basic telegram bot settings
+    /// </summary>
     public static class AppSettings
     {
         public static string Url { get; set; } = "https://currencytelegrambot.azurewebsites.net:443/{0}";

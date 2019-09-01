@@ -1,23 +1,24 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
-using System.Threading;
 
 namespace CurrencyTelegram_bot.Models.Parser
 {
+    /// <summary>
+    /// A lot of hard code
+    /// There is empty values for parsing value rates from
+    /// different sites. Used Html.AgilityPack and Regex for
+    /// get element by xpath
+    /// </summary>
     class Parse
     {
-        public string ObmenkaRates = null;
-        public string MinfinRates = null;
-        public string GoverlaRates = null;
         Regex regex = new Regex(@"[0-9]{2}\W[0-9]{2}");
         Regex regexGov = new Regex(@"[0-9]{4}");
 
-        public void ParseByXpathObmenka(string name, string url)
+        public string ParseByXpathObmenka(string name, string url)
         {
             var httpClient = new HttpClient(new HttpClientHandler { UseCookies = false });
 
@@ -57,13 +58,10 @@ namespace CurrencyTelegram_bot.Models.Parser
             {
                 Result += string.Format(b.InnerHtml + "\r\n");
             }
-            if (ObmenkaRates != Result)
-            {
-                ObmenkaRates = Result;
-            }
+            return Result;
         }
 
-        public void ParseByXpathMinfin(string name, string url)
+        public string ParseByXpathMinfin(string name, string url)
         {
             string PostUrl = url;
             WebResponse webResponse = WebRequest.Create(PostUrl).GetResponse();
@@ -92,13 +90,10 @@ namespace CurrencyTelegram_bot.Models.Parser
                     Result += string.Format("Продажа - {0}", c + "\r\n");
                 }
             }
-            if (MinfinRates != Result)
-            {
-                MinfinRates = Result;
-            }
+            return Result;
         }
 
-        public void ParseByXpathGoverla(string name, string url)
+        public string ParseByXpathGoverla(string name, string url)
         {
             string PostUrl = url;
             WebResponse webResponse = WebRequest.Create(PostUrl).GetResponse();
@@ -127,10 +122,30 @@ namespace CurrencyTelegram_bot.Models.Parser
                     Result += string.Format("Продажа - {0}", c + "\r\n");
                 }
             }
-            if (GoverlaRates != Result)
+            return Result;
+        }
+
+        public string ParseByXpathSigma(string name, string url)
+        {
+            string PostUrl = url;
+            WebResponse webResponse = WebRequest.Create(PostUrl).GetResponse();
+            StreamReader source = new StreamReader(webResponse.GetResponseStream());
+
+            string contentAsString = source.ReadToEnd().Trim();
+
+            HtmlDocument doc = new HtmlDocument();
+            doc.LoadHtml(contentAsString);
+            string Result = string.Format(name + "\r\n");
+            var buyElement = doc.DocumentNode.SelectNodes("/html/body/footer/div[1]/div[1]/div[2]/div[2]/span[2]/b/span/u");
+            foreach (var b in buyElement)
             {
-                GoverlaRates = Result;
+                MatchCollection matches = regex.Matches(b.InnerHtml);
+                foreach (var c in matches)
+                {
+                    Result += string.Format("Курс - {0}", c + "\r\n");
+                }
             }
+            return Result;
         }
 
         string GetHttpContentAsString(HttpResponseMessage response)

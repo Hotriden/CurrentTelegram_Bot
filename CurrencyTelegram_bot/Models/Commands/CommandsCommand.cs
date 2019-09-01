@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
+﻿using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
@@ -24,7 +20,7 @@ namespace CurrencyTelegram_bot.Models.Commands
         public override async Task Execute(Message message, TelegramBotClient client)
         {
             var chatId = message.Chat.Id;
-            await client.SendTextMessageAsync(chatId, "List of commands:\r\n/Current - check current rate\r\n/Hello - say hello to my little friend", parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
+            await client.SendTextMessageAsync(chatId, "Перечень всех команд:\r\n/commands - Все команды бота\r\n/start - Начало работы с ботом\r\n/check - проверка текущего курса\r\n/hello - say hello to my little friend", parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
         }
     }
 }

@@ -92,3 +92,4 @@ C:\Users\blood\source\repos\CurrencyTelegram_bot\CurrencyTelegram_bot\bin\HtmlAg
 C:\Users\blood\source\repos\CurrencyTelegram_bot\CurrencyTelegram_bot\bin\HtmlAgilityPack.pdb
 C:\Users\blood\source\repos\CurrencyTelegram_bot\CurrencyTelegram_bot\bin\HtmlAgilityPack.xml
 C:\Users\blood\source\repos\CurrencyTelegram_bot\CurrencyTelegram_bot\obj\Debug\CurrencyTelegram_bot.csprojAssemblyReference.cache
+C:\Users\blood\source\repos\CurrencyTelegram_bot\CurrencyTelegram_bot\bin\WebBackgrounder.dll

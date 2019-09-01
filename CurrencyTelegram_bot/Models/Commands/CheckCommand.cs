@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
+﻿using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
-using CurrencyTelegram_bot.Models.Parser;
-using System.Threading;
 using CurrencyTelegram_bot.Models.Parser;
 
 namespace CurrencyTelegram_bot.Models.Commands

@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Telegram.Bot;
 using CurrencyTelegram_bot.Models.Commands;
 
 namespace CurrencyTelegram_bot.Models
 {
+    /// <summary>
+    /// Implement all general commands, objects, webhook
+    /// on client
+    /// </summary>
     public static class Bot
     {
         private static TelegramBotClient client;
@@ -35,5 +36,6 @@ namespace CurrencyTelegram_bot.Models
 
             return client;
         }
+
     }
 }
