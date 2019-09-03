@@ -140,6 +140,7 @@
     <Compile Include="App_Start\WebBackGrouderSetup.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\WebHookController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -156,8 +157,6 @@
     <Compile Include="WebBackGroud\BackGroundWorker.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\1.jpg" />
-    <Content Include="Content\2.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -170,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

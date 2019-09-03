@@ -1,2 +1,0 @@
-C:\Users\blood\source\repos\CurrencyTelegram_bot\Test_CurrencyTelegram_bot\obj\Debug\Test_CurrencyTelegram_bot.csprojAssemblyReference.cache
-C:\Users\blood\source\repos\CurrencyTelegram_bot\Test_CurrencyTelegram_bot\obj\Debug\Test_CurrencyTelegram_bot.csproj.CoreCompileInputs.cache

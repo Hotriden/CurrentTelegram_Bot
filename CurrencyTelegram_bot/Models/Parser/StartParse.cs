@@ -16,17 +16,13 @@ namespace CurrencyTelegram_bot.Models.Parser
         {
             Parse parse = new Parse();
 
-            int hours = DateTime.Now.Hour;
-            if (hours >= 9 && hours <=18)
+            string lastResult = parse.ParseByXpathObmenka("Обменка", "https://obmenka.kharkov.ua/usd-uah") + "\r\n" +
+                parse.ParseByXpathMinfin("Минфин", "https://minfin.com.ua/currency/mb/") + "\r\n" +
+                parse.ParseByXpathGoverla("Говерла", "https://goverla.ua/") + "\r\n" +
+                parse.ParseByXpathSigma("Sigma", "https://sigma.ua/");
+            if (StartParseResult != lastResult)
             {
-                string lastResult = parse.ParseByXpathObmenka("Обменка", "https://obmenka.kharkov.ua/usd-uah") + "\r\n" +
-                    parse.ParseByXpathMinfin("Минфин", "https://minfin.com.ua/currency/mb/") + "\r\n" +
-                    parse.ParseByXpathGoverla("Говерла", "https://goverla.ua/") + "\r\n" +
-                    parse.ParseByXpathSigma("Sigma", "https://sigma.ua/");
-                if (StartParseResult != lastResult)
-                {
-                    StartParseResult = lastResult;
-                }
+                StartParseResult = lastResult;
             }
         }
     }
